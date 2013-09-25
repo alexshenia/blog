@@ -16,10 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :post %><br>
-    <%= f.text_area :post %>
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
   </div>
   <div class="actions">
-    <%= f.submit (@post.persisted? ? 'update post' : 'Create post') %>
+    <%= f.submit %>
   </div>
 <% end %>
