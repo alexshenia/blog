@@ -13,6 +13,7 @@ Body: <%= @post.body %></br>
 <% end %>
 
 <%= form_for @comment do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.try(:id) %>
   <%= f.hidden_field :post_id, value: @post.id %>
 
   <% if @comment.errors.any? %>
