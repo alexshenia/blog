@@ -26,3 +26,9 @@ And /^I should see my new post$/ do
 
   Post.all.count.should == 1
 end
+
+Given /^I am on post page$/ do
+  post = Post.create(title: 'a', body: 'b')
+
+  visit post_path(post)
+end

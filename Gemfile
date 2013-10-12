@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'debugger'
+gem 'devise'
 
 group :test do
   gem 'rspec-rails'
