@@ -1,25 +1,13 @@
-<%= form_for(@post) do |f| %>
+<%= form_for @post do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+    Errors: <%= @post.errors.full_messages.join('; ') %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br/>Title:
+  <%= f.text_field :title %>
+  <br/>Body:
+  <%= f.text_area :body %>
+
+  <br/>
+  <%= f.submit (@post.persisted? ? 'Update post' : 'Create post') %>
 <% end %>

@@ -15,6 +15,7 @@ describe PostsController do
       expect(post.body).to eq 'hello world'
     end
   end
+
   describe 'update' do
     before do
       @post = Post.create(title: '1', body: '2')

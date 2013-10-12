@@ -8,4 +8,6 @@ Feature: Manage posts
     When I fill post form
     And I submit posts form
 
+    Then I should be on posts page
     And I should see my new post
+

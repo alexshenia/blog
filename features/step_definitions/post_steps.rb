@@ -3,7 +3,7 @@ Given /^I am on posts page$/ do
 end
 
 When /^I follow "create new post"$/ do
-  click_link 'New Post'
+  click_link 'create new post'
 end
 
 When /^I fill post form$/ do
@@ -12,9 +12,13 @@ When /^I fill post form$/ do
 end
 
 And /^I submit posts form$/ do
-  click_button 'Create Post'
+  click_button 'Create post'
 end
 
+Then /^I should be on posts page$/ do
+  current_path = URI.parse(current_url).path
+  current_path.should == '/posts'
+end
 
 And /^I should see my new post$/ do
   page.should have_content('First post')
